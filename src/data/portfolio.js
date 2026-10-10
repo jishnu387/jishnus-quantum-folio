@@ -1,5 +1,5 @@
 export const profile = {
-  name: 'Jishnu R.', title: 'AI & Data Science Engineer', email: '', resume: '',
+  name: 'Jishnu R.', title: 'AI & Data Science Engineer', email: '', resume: '', photo: '',
   roles: ['Machine Learning Enthusiast', 'Full Stack Developer', 'AWS Cloud Learner', 'IoT Innovator'],
   socials: { LinkedIn: '', GitHub: '', Instagram: '', YouTube: '', X: '' },
   coding: { LeetCode: '', GitHub: '' },

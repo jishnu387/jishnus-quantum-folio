@@ -1,7 +1,7 @@
 import { Component, lazy, Suspense, useEffect, useState } from 'react';
 import { ClientOnly, Link, useRouterState } from '@tanstack/react-router';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { ArrowUpRight, ArrowRight, Download, Menu, X, Github, Linkedin, Instagram, Youtube, Mail, Code2, BrainCircuit, Cpu, Cloud, Globe, ExternalLink, Check, Copy, ChevronRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Download, Menu, X, Github, Linkedin, Instagram, Youtube, Mail, Code2, BrainCircuit, Cpu, Cloud, Globe, ExternalLink, Check, Copy, ChevronRight, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { profile, projects } from '@/data/portfolio';
 import { useHeroScene } from '@/hooks/useHeroScene';
@@ -16,6 +16,23 @@ export function Socials() {
     const Icon = socialIcons[name];
     return url ? <Button key={name} variant="ghost" size="icon" asChild><a href={url} target="_blank" rel="noopener noreferrer" aria-label={name} title={name}><Icon /></a></Button> : <Button key={name} variant="ghost" size="icon" aria-label={`${name} — profile not provided`} title={`${name} — profile not provided`} disabled><Icon /></Button>;
   })}</div>;
+}
+// A real photo is only ever shown when one has been supplied; until then an
+// honest monogram stands in — a stock or generated face is never used.
+export function Portrait({ variant = 'framed' }) {
+  return <div className={`portrait portrait-${variant}`}>
+    <div className="portrait-frame">
+      {profile.photo
+        ? <img src={profile.photo} alt={`Portrait of ${profile.name}`} loading="lazy" />
+        : <div className="portrait-placeholder" role="img" aria-label="Profile photo not provided yet">
+            <span className="portrait-grid" aria-hidden="true" />
+            <span className="portrait-monogram" aria-hidden="true">JR</span>
+          </div>}
+      <span className="portrait-corner corner-tl" aria-hidden="true" />
+      <span className="portrait-corner corner-br" aria-hidden="true" />
+    </div>
+    {profile.photo ? null : <span className="portrait-note"><Clock size={11} />PHOTO NOT PROVIDED</span>}
+  </div>;
 }
 export function ResumeButton({ compact = false }) {
   const [available, setAvailable] = useState(false);
