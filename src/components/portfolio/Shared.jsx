@@ -58,7 +58,7 @@ class SceneBoundary extends Component {
 function SceneFallback() { return <div className="scene-fallback" role="img" aria-label="Neural-network geometric sculpture"><div className="fallback-ring ring-one" /><div className="fallback-ring ring-two" /><div className="fallback-core"><BrainCircuit size={90} strokeWidth={0.7} /></div></div>; }
 export function HeroVisual() {
   const enabled = useHeroScene();
-  return <div className="hero-visual"><div className="scene-glow" /><div className="scene-caption top-caption"><span className="tiny-dot" />SYSTEM ONLINE <span>01 / NEURAL CORE</span></div><SceneBoundary>{enabled ? <Suspense fallback={<SceneFallback />}><Scene /></Suspense> : <SceneFallback />}</SceneBoundary><div className="scene-caption bottom-caption"><span>AI × CODE × CREATIVITY</span><span className="scene-coordinate">12.9716° N / 77.5946° E</span></div></div>;
+  return <div className="hero-visual"><div className="scene-glow" /><div className="scene-caption top-caption"><span className="tiny-dot" />SYSTEM ONLINE <span>01 / NEURAL CORE</span></div><SceneBoundary>{enabled ? <Suspense fallback={<SceneFallback />}><Scene /></Suspense> : <SceneFallback />}</SceneBoundary><div className="scene-caption bottom-caption"><span>AI × CODE × CREATIVITY</span><span className="scene-coordinate">LEARN / BUILD / EVOLVE</span></div></div>;
 }
 export function HeroParticles() { return <Suspense fallback={null}><Particles /></Suspense>; }
 export function CTA({ title = "Let’s build something", accent = 'great.', text = 'An interesting idea. A meaningful problem. An opportunity to collaborate.' }) {

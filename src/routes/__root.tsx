@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import responsiveCss from "../styles/responsive.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { PortfolioLayout } from "@/components/portfolio/Shared";
 
@@ -94,6 +95,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "stylesheet", href: responsiveCss },
     ],
   }),
   shellComponent: RootShell,
