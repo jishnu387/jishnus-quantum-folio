@@ -1,5 +1,5 @@
 import { Component, lazy, Suspense, useEffect, useState } from 'react';
-import { Link, useRouterState } from '@tanstack/react-router';
+import { ClientOnly, Link, useRouterState } from '@tanstack/react-router';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowUpRight, ArrowRight, Download, Menu, X, Github, Linkedin, Instagram, Youtube, Mail, Code2, BrainCircuit, Cpu, Cloud, Globe, ExternalLink, Check, Copy, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -60,7 +60,7 @@ export function HeroVisual() {
   const enabled = useHeroScene();
   return <div className="hero-visual"><div className="scene-glow" /><div className="scene-caption top-caption"><span className="tiny-dot" />SYSTEM ONLINE <span>01 / NEURAL CORE</span></div><SceneBoundary>{enabled ? <Suspense fallback={<SceneFallback />}><Scene /></Suspense> : <SceneFallback />}</SceneBoundary><div className="scene-caption bottom-caption"><span>AI × CODE × CREATIVITY</span><span className="scene-coordinate">LEARN / BUILD / EVOLVE</span></div></div>;
 }
-export function HeroParticles() { return <Suspense fallback={null}><Particles /></Suspense>; }
+export function HeroParticles() { return <ClientOnly fallback={null}><Suspense fallback={null}><Particles /></Suspense></ClientOnly>; }
 export function CTA({ title = "Let’s build something", accent = 'great.', text = 'An interesting idea. A meaningful problem. An opportunity to collaborate.' }) {
   return <section className="cta-section"><Reveal className="cta-inner"><div className="eyebrow"><span />THE NEXT CHAPTER</div><h2>{title} <span className="gradient-text">{accent}</span></h2><p>{text}</p><Button asChild variant="premium" size="lg"><Link to="/contact">Let’s Talk <ArrowUpRight /></Link></Button><div className="cta-code">&lt; together, we build /&gt;</div></Reveal></section>;
 }
