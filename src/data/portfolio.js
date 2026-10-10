@@ -1,5 +1,6 @@
+import photoAsset from '@/assets/jishnu-r.jpg.asset.json';
 export const profile = {
-  name: 'Jishnu R.', title: 'AI & Data Science Engineer', email: '', resume: '', photo: '',
+  name: 'Jishnu R.', title: 'AI & Data Science Engineer', email: '', resume: '', photo: photoAsset.url,
   roles: ['Machine Learning Enthusiast', 'Full Stack Developer', 'AWS Cloud Learner', 'IoT Innovator'],
   socials: { LinkedIn: '', GitHub: '', Instagram: '', YouTube: '', X: '' },
   coding: { LeetCode: '', GitHub: '' },
