@@ -104,3 +104,5 @@ button { font-family: inherit; } ::selection { background: var(--primary); color
 .portrait-note { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 8px; font: 8px var(--font-mono); letter-spacing: 1px; color: var(--muted-foreground); }
 .about-preview-copy .portrait { margin-bottom: 14px; }
 .biography-grid .portrait { margin-bottom: 26px; }
+
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; }
