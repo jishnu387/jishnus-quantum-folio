@@ -101,5 +101,6 @@ button { font-family: inherit; } ::selection { background: var(--primary); color
 .portrait-corner { position: absolute; width: 15px; height: 15px; border-color: var(--scene-light); opacity: .85; }
 .corner-tl { top: 9px; left: 9px; border-top: 1px solid; border-left: 1px solid; }
 .corner-br { bottom: 9px; right: 9px; border-bottom: 1px solid; border-right: 1px solid; }
-.portrait-note { display: inline-flex; align-items: center; gap: 7px; font: 8px var(--font-mono); letter-spacing: 1px; color: var(--muted-foreground); }
+.portrait-note { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 8px; font: 8px var(--font-mono); letter-spacing: 1px; color: var(--muted-foreground); }
+.about-preview-copy .portrait { margin-bottom: 14px; }
 .biography-grid .portrait { margin-bottom: 26px; }
