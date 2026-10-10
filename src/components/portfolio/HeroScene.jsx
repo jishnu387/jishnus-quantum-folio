@@ -1,6 +1,6 @@
 import { Suspense, useMemo, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float, Html, Line } from '@react-three/drei';
+import { Float, Line } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Scene colors are read from the same semantic tokens as the page.
@@ -27,9 +27,7 @@ function Network({ palette }) {
     {points.map((point, i) => <mesh key={i} position={point}><sphereGeometry args={[i % 4 === 0 ? 0.044 : 0.022, 8, 8]} /><meshBasicMaterial color={i % 3 === 0 ? palette.cyan : palette.light} /></mesh>)}
     <Float speed={1.1} rotationIntensity={0.18} floatIntensity={0.25}><mesh ref={core}><icosahedronGeometry args={[1.05, 1]} /><meshPhysicalMaterial color={palette.core} metalness={0.5} roughness={0.24} emissive={palette.core} emissiveIntensity={0.32} clearcoat={1} /></mesh><mesh><icosahedronGeometry args={[1.065, 1]} /><meshBasicMaterial color={palette.light} wireframe transparent opacity={0.48} /></mesh></Float>
     {[0, 1, 2].map(i => <mesh key={i} rotation={[Math.PI / 2 + i * 0.5, i * 0.7, i * 0.45]}><torusGeometry args={[2.45 + i * 0.13, 0.008, 6, 180]} /><meshBasicMaterial color={i === 1 ? palette.cyan : palette.wire} transparent opacity={0.38} /></mesh>)}
-    <Html position={[-2.2, 1.35, 0]} center><div className="scene-label"><span className="scene-label-dot" />neural_network.py</div></Html>
-    <Html position={[2.05, -0.95, 0]} center><div className="scene-label cyan-label">&lt; intelligence /&gt;</div></Html>
-    <Html position={[0.85, 2.1, 0]} center><div className="scene-symbol">✦</div></Html>
+    <Float speed={1.4} floatIntensity={0.2}><mesh position={[0.85, 2.5, 0]}><octahedronGeometry args={[0.11]} /><meshBasicMaterial color={palette.light} /></mesh><mesh position={[-2.4, 1.3, 0]} rotation={[0.2, 0.5, 0.3]}><boxGeometry args={[0.18, 0.18, 0.18]} /><meshBasicMaterial wireframe color={palette.cyan} /></mesh></Float>
   </group>;
 }
 export default function HeroScene() {
