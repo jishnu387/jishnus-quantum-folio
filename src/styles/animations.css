@@ -1,0 +1,11 @@
+@keyframes blink { 50% { opacity: 0; } }
+@keyframes glow-drift { from { transform: scale(.9) translateY(-10px); opacity: .7; } to { transform: scale(1.1) translateY(12px); opacity: 1; } }
+@keyframes route-flow { to { stroke-dashoffset: -100; } }
+@media (prefers-reduced-motion: reduce) {
+ *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+ .project-card { transform: none !important; }
+}
+.scene-label-overlay { position: absolute; inset: 0; pointer-events: none; }
+.scene-label-overlay .scene-label { position: absolute; left: 6%; top: 26%; animation: label-float 6s ease-in-out infinite alternate; }
+.scene-label-overlay .cyan-label { left: auto; right: 3%; top: 66%; animation-delay: -3s; }
+@keyframes label-float { to { transform: translateY(-8px); } }

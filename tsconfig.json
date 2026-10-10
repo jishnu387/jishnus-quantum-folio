@@ -1,5 +1,7 @@
 {
   "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
     "vite.config.ts",
@@ -7,6 +9,8 @@
     "eslint.config.js"
   ],
   "compilerOptions": {
+    "allowJs": true,
+    "checkJs": false,
     "target": "ES2022",
     "jsx": "react-jsx",
     "module": "ESNext",
